@@ -64,9 +64,9 @@ conn.connect((err) => {
 
 // Routing
 // ------------------------------------------------------------------------------
-// app.get('/', (req, res) => {
-//     res.send('Server is Online...')
-// })
+app.get('/', (req, res) => {
+    res.send('Server is Online ...')
+})
 
 // Account api
 // read
