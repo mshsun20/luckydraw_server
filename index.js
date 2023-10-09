@@ -48,7 +48,7 @@ const upload = multer({
 
 // listening to server
 app.listen(port,host, (req, res) => {
-    console.log(`Server is Running at http://${host}:${port}`)
+    console.log(`Server is Running at ${host}:${port}`)
 })
 
 // DB Connection
@@ -56,8 +56,12 @@ const conn = mysql.createConnection({
     host, user, password, database, multipleStatements: true
 })
 conn.connect((err) => {
-    if (err) throw err
-    console.log('Successfully Connected to Database...')
+    if (err) {
+        console.error('DB Connection Error !!!')
+    }
+    else {
+        console.log('Successfully Connected to Database...')
+    }
 })
 
 
