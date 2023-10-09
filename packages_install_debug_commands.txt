@@ -1,0 +1,2 @@
+## If some packages install Error found then ::=>>
+~ npm config set legacy-peer-deps true
