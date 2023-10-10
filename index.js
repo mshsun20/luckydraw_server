@@ -19,9 +19,9 @@ app.use(express.static('uploads'))
 // env variables
 const port = process.env.PORT || 5000
 const host = process.env.HOST || 'localhost'
-const user = process.env.USER || 'root'
-const password = process.env.PASSWORD || ''
-const database = process.env.DATABASE || 'luckydrawdb'
+// const user = process.env.USER || 'root'
+// const password = process.env.PASSWORD || ''
+// const database = process.env.DATABASE || 'luckydrawdb'
 
 
 // image storage setup
@@ -52,8 +52,9 @@ app.listen(port,host, (req, res) => {
 })
 
 // DB Connection
-const conn = mysql.createConnection({
-    host, user, password, database, multipleStatements: true
+const conurl = 'mysql://root:WFAEtkqD7VJSa4Dm42yu@containers-us-west-138.railway.app:7495/railway'
+const conn = mysql.createConnection(conurl, {
+    multipleStatements: true
 })
 conn.connect((err) => {
     if (err) {
