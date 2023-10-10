@@ -52,10 +52,8 @@ app.listen(port,host, (req, res) => {
 })
 
 // DB Connection
-const conurl = 'mysql://root:WFAEtkqD7VJSa4Dm42yu@containers-us-west-138.railway.app:7495/railway'
-const conn = mysql.createConnection(conurl, {
-    multipleStatements: true
-})
+const conurl = `mysql://root:WFAEtkqD7VJSa4Dm42yu@containers-us-west-138.railway.app:7495/railway`
+const conn = mysql.createConnection(conurl)
 conn.connect((err) => {
     if (err) {
         console.error('DB Connection Error !!!')
